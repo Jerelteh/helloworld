@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/nawaf83/hello-world-java1.git'
+                git branch: 'master', url: 'https://github.com/Jerelteh/helloworld.git'
             }
         }
         stage('Build') {
@@ -30,10 +30,10 @@ pipeline {
 }
 
 post {
-        always {
-            echo 'Cleaning up workspace'
-            deleteDir() // Clean up the workspace after the build
-        }
+        // always {
+        //     echo 'Cleaning up workspace'
+        //     deleteDir() // Clean up the workspace after the build
+        // }
         success {
             echo 'Build succeeded!!'
             // You could add notification steps here, e.g., send an email
